@@ -1,0 +1,59 @@
+CREATE TABLE OrdersHistory (
+    order_id INT PRIMARY KEY,
+    user_id INT,
+    product_id INT
+    );
+    
+CREATE TABLE Users (
+    user_id INT PRIMARY KEY,
+    username VARCHAR(50),
+    email VARCHAR(50),
+    user_password VARCHAR(50),
+    address VARCHAR(50),
+    phone_number INT,
+    registration_date DATE,
+    last_login_date DATE
+    );
+    
+CREATE TABLE Products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(50),
+    price INT
+    );
+    
+CREATE TABLE Orders (
+    order_id INT PRIMARY KEY,
+    user_id INT,
+    product_id INT,
+    discount_id INT,
+    order_date DATE,
+    total_amount INT,
+    delivery_address VARCHAR(100), 
+    status_ord VARCHAR(20),
+    payment_method VARCHAR(20),
+    delivery_time DATETIME
+    );
+    
+CREATE TABLE Categories (
+    category_id INT PRIMARY KEY,
+    category_name VARCHAR(50),
+    description TEXT
+    );    
+    
+CREATE TABLE Reviews (
+    review_id INT PRIMARY KEY,
+    user_id INT,
+    raview_text TEXT
+    );     
+    
+CREATE TABLE Payments (
+    payment_id INT PRIMARY KEY,
+    order_id INT,
+    amount_text DECIMAL(10, 2)
+    );    
+    
+CREATE TABLE Discounts (
+    discount_id INT PRIMARY KEY,
+    discount_code VARCHAR(10),
+    discount_amount DECIMAL(5, 2)
+    );
